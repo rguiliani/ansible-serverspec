@@ -1,0 +1,8 @@
+---
+- name: setup in Docker container test
+  connection: local
+  hosts: localhost
+  become_method: sudo
+  become_user: root
+  roles:
+    - serverspec
