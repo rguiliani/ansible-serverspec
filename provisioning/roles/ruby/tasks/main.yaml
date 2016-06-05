@@ -1,0 +1,23 @@
+---
+- name: add brightbox ruby repository
+  apt_repository:
+    repo: 'ppa:brightbox/ruby-ng'
+
+- name: install ruby 2.1
+  apt:
+    pkg: ruby2.1
+    state: present
+
+- name: install ruby 2.1 dev headers
+  apt:
+    pkg: ruby2.1-dev
+    state: present
+
+- name: install bundler
+  gem:
+    name: "{{ item }}"
+    state: present
+    user_install: no
+  with_items:
+    - bundler
+    - rake

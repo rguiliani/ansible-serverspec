@@ -1,0 +1,5 @@
+---
+- name: curl is available
+  apt:
+    name: curl
+    state: present
